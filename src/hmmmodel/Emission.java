@@ -5,12 +5,12 @@ package hmmmodel;
  */
 public class Emission {
 
-    int represent;
-    double prob;
+    public String represent;
+    public double prob;
     Zustand owner;
 
 
-    public Emission(int represent, double prob, Zustand owner){
+    public Emission(String represent, double prob, Zustand owner){
         this.represent = represent;
         this.prob = prob;
         this.owner = owner;
