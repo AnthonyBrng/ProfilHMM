@@ -3,30 +3,33 @@ package hmmmodel;
 import java.util.ArrayList;
 
 /**
- * Created by anthony on 21.01.17.
+ * Abstract Zustand-Object
+ *
+ * Contains a String-Representation, a List of emission object this Zustand can emit
+ * and a list of Transition-Objects this Zustand can transit to.
  */
 public abstract class Zustand
 {
 
     private String representant ;
     public ArrayList<Emission> emissions = new ArrayList<>() ;
-    public  ArrayList<Zustand> zustands = new ArrayList<>() ;
+    public  ArrayList<Transition> transitions = new ArrayList<>() ;
 
 
     /**
-     *
-     * @param representant
+     * Constructor
+     * @param representant String-Representation
      */
     public Zustand(String representant)
     {
         this.representant = representant ;
         initEmissions();
-        initZustands();
+        initTransition();
     }
 
     /**
-     *
-     * @return
+     * Equals to getRepresentant()
+     * @return returns the String-Representant.
      */
     public String toString()
     {
@@ -44,6 +47,6 @@ public abstract class Zustand
 
     public abstract void initEmissions();
 
-    public abstract void initZustands();
+    public abstract void initTransition();
 
 }
